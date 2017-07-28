@@ -1,0 +1,7 @@
+#include<stdio.h>
+
+
+void mergeSort (int A[], int p, int r) {
+  if ( p < r ) {
+    int q = (r - p)/2;
+    merge
