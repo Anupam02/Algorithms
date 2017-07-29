@@ -1,0 +1,31 @@
+#include <iostream>
+#define INF 9999999
+void merge(int A[], int p, int q, int r) {
+  int n1 = q-p+1;
+  int n2 = r-q;
+
+  int L[n1+1];
+  int R[n2+1];
+  int i,j,k;
+
+  for( i = 0; i < n; i++)
+    L[i] = A[p+i];
+
+  L[n1] = INF;
+
+  for( i = 0; i < n; i++)
+    R[i] = A[q+i];
+
+  R[n2] = INF;
+
+  i = j = 0; k = p;
+  while ( k <= r) {
+    if ( L[i] < R[j] ) {
+      A[k] = L[i];
+      i++;
+    } else {
+      A[k] = R[j];
+      j++;
+    }
+    k++;
+  }
